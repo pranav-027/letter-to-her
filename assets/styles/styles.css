@@ -104,11 +104,19 @@ button:hover {
   padding: 20px;
   border-radius: 15px;
   max-width: 500px;
-  max-height: 80vh;       /* 👈 limit height */
-  overflow-y: auto;       /* 👈 enable scrolling */
+  max-height: 80vh;
+  overflow-y: auto;
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   animation: fadeIn 1.2s ease;
   text-align: left;
+
+  /* Hide scrollbar but keep scrollable */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE 10+ */
+}
+
+.letter::-webkit-scrollbar {    /* Chrome, Safari, Edge */
+  display: none;
 }
 
 .letter h2 {
