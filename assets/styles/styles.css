@@ -20,8 +20,8 @@ body {
   }
 
   .heart {
-    width: 90vw;        /* takes almost full width on mobile */
-    max-width: 500px;   /* grows bigger on larger screens */
+    width: 90vw;
+    max-width: 500px;
     aspect-ratio: 1/1;
     animation: pulse 1.5s infinite;
     -webkit-mask: url(#heartMask);
@@ -33,6 +33,11 @@ body {
     mask-position: center;
     mask-size: contain;
     overflow: hidden;
+  
+    background: #ff4b5c; /* ❤️ red/pink heart background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .heart img {
@@ -41,6 +46,7 @@ body {
     object-fit: cover;
     border-radius: 20px; /* optional soft edges */
   }
+  
 
   @keyframes pulse {
     0% { transform: scale(1); }
