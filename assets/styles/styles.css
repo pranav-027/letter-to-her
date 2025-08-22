@@ -41,8 +41,8 @@ body {
   }
   
   .heart img {
-    width: 100%;     /* make image smaller inside heart */
-    height: 100%;
+    width: 60%;     /* make image smaller inside heart */
+    height: 60%;
     object-fit: cover;
     border-radius: 20px; /* optional soft edges */
   }
