@@ -79,7 +79,6 @@ button:hover {
   font-size: 1.2rem;
 }
 
-/* Letter overlay */
 .letter-overlay {
   position: fixed;
   top: 0; left: 0;
@@ -99,11 +98,14 @@ button:hover {
   transform: translateY(0);
 }
 
+/* make letter scrollable on smaller screens */
 .letter {
   background: #fff0f5;
   padding: 20px;
   border-radius: 15px;
   max-width: 500px;
+  max-height: 80vh;       /* 👈 limit height */
+  overflow-y: auto;       /* 👈 enable scrolling */
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   animation: fadeIn 1.2s ease;
   text-align: left;
