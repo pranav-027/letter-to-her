@@ -3,71 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Love You</title>
-  <link rel="stylesheet" href="./assets/styles/styles.css">
+  <title>Enter Secret Code</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+    .lock-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #ff4b5c;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4b5c;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-
-  <h1>I Love You ❤️</h1>
-
-  <!-- Scalable heart-shaped container -->
-  <div class="heart">
-    <img src="./assets/img/photo.jpg" alt="Your Image">
+  <div class="lock-container">
+    <h2>Enter Secret Code 🔒</h2>
+    <input type="password" id="codeInput" placeholder="Secret code">
+    <button onclick="checkCode()">Unlock</button>
+    <div id="errorMsg" class="error"></div>
   </div>
-
-  <button id="openLetter">
-    <span class="envelope-icon">✉️</span> Open Letter
-  </button>
-
-  <div class="letter-overlay" id="letterOverlay">
-    <div class="letter">
-      <h2>My Love Letter 💌</h2>
-      <p>
-        Hello Love,
-        <p>
-          Recently we talked about how we met for the first time and how we felt about all our “firsts.” It was such a beautiful dive into our memories. Remembering those moments made me fall in love with you all over again. I had been missing us for some time, but I feel like we’ve caught that vibe again thinking the same thoughts, saying the same words. I don’t know if it’s just a vibe matching or if it’s our hearts truly matching.
-        </p>
-         <p>
-          I still remember holding your hand for the first time and calling it mine that very day. I’m grateful you trusted me with your hand, and I promise it is mine, a part of me. I will give everything to protect it and live for it.
-         </p> 
-         <p>
-          While cleaning my gallery and posting old stories, I was reliving all those moments in my mind, and it left a big big big smile on my face. Sometimes I feel like you are a dream I always craved. Living this dream with you makes me the happiest man on earth.
-        </p>
-        <p>
-          I just want to say that I love you, and nothing in this world will ever stop me from loving you.
-        </p>  
-      Yours,
-      <br>
-      Peru
-    </p>
-      <button class="close-btn" id="closeLetter">Close</button>
-    </div>
-  </div>
-
-  <!-- SVG heart shape as mask -->
-  <svg width="0" height="0">
-    <defs>
-      <mask id="heartMask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
-        <path fill="white" d="M0.5,0.9 
-          C-0.4,0.3,0.2,-0.3,0.5,0.2 
-          C0.8,-0.3,1.4,0.3,0.5,0.9Z"/>
-      </mask>
-    </defs>
-  </svg>
 
   <script>
-    const openBtn = document.getElementById('openLetter');
-    const closeBtn = document.getElementById('closeLetter');
-    const overlay = document.getElementById('letterOverlay');
+    const SECRET_CODE = "1727"; // ❤️ hardcoded code
 
-    openBtn.addEventListener('click', () => {
-      overlay.classList.add('show');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      overlay.classList.remove('show');
-    });
+    function checkCode() {
+      const input = document.getElementById("codeInput").value;
+      if (input === SECRET_CODE) {
+        window.location.href = "love.html"; // go to your love letter page
+      } else {
+        document.getElementById("errorMsg").textContent = "Wrong code, try again!";
+      }
+    }
   </script>
-
 </body>
 </html>
